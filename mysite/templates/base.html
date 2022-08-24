@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My Django Blog</title>
 </head>
 <body>
-
+    <div id="container">
+        <div id="content">
+            {% block content %}
+            [ content will go here ]
+            {% endblock %}
+        </div>
+    </div>
 </body>
 </html>
