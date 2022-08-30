@@ -19,10 +19,19 @@ class Post(models.Model):
 
 class Category(models.Model):
     """
-    THis class defines Category, which maintains the details of the category of a blog post.
+    This class defines Category, which maintains the details of the category of a blog post.
     """
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=128)
     description = models.TextField(blank=True)
     posts = models.ManyToManyField(Post, blank=True, related_name='categories')
+
+    def __str__(self):
+        return self.name
+
+
 
 
