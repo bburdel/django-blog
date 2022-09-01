@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 from blogging.models import Post, Category
 
+# import pysnooper
 
 class PostTestCase(TestCase):
     fixtures = ['blogging_test_fixture.json', ]
@@ -49,6 +50,7 @@ class FrontEndTestCase(TestCase):
                 post.published_date = pubdate
             post.save()
 
+    # @pysnooper.snoop(depth=2)
     def test_list_only_published(self):
         resp = self.client.get('/')
         resp_text = resp.content.decode(resp.charset)
