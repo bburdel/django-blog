@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.http.response import Http404, HttpResponse, HttpResponseRedirect
 from django.template import loader
 from blogging.models import Post
 
@@ -7,10 +7,10 @@ from blogging.models import Post
 def stub_view(request, *args, **kwargs):
     body = "Stub View\n\n"
     if args:
-        body += "Args\n"
+        body += "Args: \n"
         body += "\n".join(["\t%s" % a for a in args])
     if kwargs:
-        body += "Kwargs\n"
+        body += "Kwargs: \n"
         body += "\n".join(["\t%s: %s" % i for i in kwargs.items()])
     return HttpResponse(body, content_type="text/plain")
 
@@ -22,7 +22,6 @@ def list_view(request):
     context = {'posts': posts}
     # body = template.render(context)
     # return HttpResponse(body, content_type="text/html")
-    # return render(request, 'list.html', context)
     return render(request=request, template_name='blogging/list.html', context=context)
 
 

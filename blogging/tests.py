@@ -4,8 +4,7 @@ from django.utils.timezone import utc
 from django.test import TestCase
 from django.contrib.auth.models import User
 
-from blogging.models import Post
-from blogging.models import Category
+from blogging.models import Post, Category
 
 
 class PostTestCase(TestCase):
@@ -52,7 +51,6 @@ class FrontEndTestCase(TestCase):
 
     def test_list_only_published(self):
         resp = self.client.get('/')
-        # the context of the rendered response is always a bytsetring
         resp_text = resp.content.decode(resp.charset)
         self.assertTrue("Recent Posts" in resp_text)
         for count in range(1, 11):
@@ -64,7 +62,7 @@ class FrontEndTestCase(TestCase):
 
     def test_details_only_published(self):
         for count in range(1, 11):
-            title = "Post %d Title" % count
+            title = f"Post {count} Title"
             post = Post.objects.get(title=title)
             resp = self.client.get('/posts/%d/' % post.pk)
             if count < 6:
