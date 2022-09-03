@@ -8,13 +8,16 @@ from blogging.models import Post, Category
 class CategoryInline(admin.TabularInline):
     model = Category.posts.through
 
+    def __str__(self):
+        return self.model
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'text', 'author', 'created_date',
                     'modified_date', 'published_date', 'categories')
 
     # def categories(self):
-    #     return Category.posts
+    #     return Category.posts.through
+
     inlines = [
         CategoryInline,
     ]
