@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# TODO reconfigure models to only add categories to posts
+
 
 class Post(models.Model):
     """
