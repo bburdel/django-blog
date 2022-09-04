@@ -14,8 +14,10 @@ class PostAdmin(admin.ModelAdmin):
     """
 
     """
+    # list_display = ('title', 'author', 'created_date',
+    #                 'modified_date', 'published_date', 'categories')
     list_display = ('title', 'author', 'created_date',
-                    'modified_date', 'published_date', 'categories')
+                    'modified_date', 'published_date')
 
     inlines = [
         CategoryInline,
