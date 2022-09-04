@@ -16,11 +16,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def category_name(self):
-        name = Category.name
-        return name
-
-
 
 class Category(models.Model):
     """
