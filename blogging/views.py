@@ -14,15 +14,14 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name = 'blogging/detail.html'
-    # published_queryset = Post.objects.exclude(published_date__exact=None)
+    queryset = Post.objects.exclude(published_date__exact=None)
 
     def get_context_data(self, **kwargs):
         try:
-            context = super().get_context_data(**kwargs)
-            context['blogging_list'] = Post.objects.exclude(published_date__exact=None)
-            return context
+            context = self.queryset.get(pk=kwargs)
         except Post.DoesNotExist:
             raise Http404
+        return context
 
 
 
