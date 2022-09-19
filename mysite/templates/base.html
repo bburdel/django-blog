@@ -16,7 +16,7 @@
             {% endif %}
             <li><a href="{% url 'logout' %}">logout</a></li>
             {% else %}
-            <li><a href="{% url 'account_login' %}">login</a></li>
+            <li><a href="{% provider_login_url 'github' %}">login</a></li>
         {% endif %}
         </ul>
     </div>
