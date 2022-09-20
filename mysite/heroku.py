@@ -1,8 +1,8 @@
-import os
-
 import dj_database_url
 
 from .settings import *
+
+import os
 
 DATABASES = {
     "default": dj_database_url.config(
