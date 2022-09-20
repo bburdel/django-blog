@@ -10,8 +10,8 @@ DATABASES = {
     )
 }
 
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True  # temp change for debugging
+TEMPLATE_DEBUG = True  # temp change for debugging
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 ALLOWED_HOSTS = ["*"]
