@@ -85,7 +85,7 @@ DATABASES = {
 }
 
 # This will supposedly fix the models.W042 error I keep triggering in Django/heroku pushes
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
