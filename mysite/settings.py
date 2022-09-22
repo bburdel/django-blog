@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 LOGIN_URL = "/login/"
-# LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
 
 
 # allauth backend configuration
@@ -133,8 +133,7 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-SITE_ID = 1
+SITE_ID = 0
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
-LOGIN_REDIRECT_URL = "/"
