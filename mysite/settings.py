@@ -133,6 +133,7 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-SITE_ID = 0
+# Ran this code in the shell to get the site id --> Site.objects.get(name='example.com').id
+SITE_ID = 2
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
